@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.prabodh.entity.NbfcMaster;
@@ -27,6 +28,10 @@ public class MasterRestcontroller {
 	@GetMapping("/nbfc/{id}")
 	private NbfcMaster getMaster(@PathVariable("id") int id) {
 		return nbfcService.getNbfcById(id);
+	}
+	@GetMapping("/nbfc/{name}")
+	public NbfcMaster getNbfcByNbfc_name(@PathVariable("name") String name) {
+		return nbfcService.getNbfcByNbfc_name(name);
 	}
 
 	@DeleteMapping("/nbfc/{id}")

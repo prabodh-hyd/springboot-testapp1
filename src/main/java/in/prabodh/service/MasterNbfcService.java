@@ -21,6 +21,7 @@ public class MasterNbfcService {
 	}
 
 	public NbfcMaster getNbfcById(int id) {
+
 		return nbfcRepo.findById(id).get();
 	}
 
@@ -32,8 +33,12 @@ public class MasterNbfcService {
 		nbfcRepo.deleteById(id);
 	}
 
-	public void update(NbfcMaster master, int bookid) {
+	public void update(NbfcMaster master, int id) {
 		nbfcRepo.save(master);
+	}
+	public NbfcMaster getNbfcByNbfc_name(String name) {
+
+		return nbfcRepo.findByNbfc_name(name).get();
 	}
 
 }
